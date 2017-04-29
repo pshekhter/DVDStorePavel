@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="template.xhtml">
+
+    <ui:define name="body">
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputText value="Email Address" />
+                <h:inputText id="email" value="#{filmController.emailAddress}" size="50" maxlength="100" required="true" label="Email Address" />
+                <h:message for="email" style="color: red; font-size: 0.7em" />
+            </h:panelGrid>
+            <h:inputHidden id="hidden" value="#{filmController.selectedId}" />
+            <h:commandButton id="submit" value="Submit" action="email" />
+            <h:commandButton value="Clear" type="reset" />
+        </h:form>
+        <h:outputText escape="false" value="#{filmController.emailResponse}" />
+    </ui:define>
+
+</ui:composition>
+</html>
